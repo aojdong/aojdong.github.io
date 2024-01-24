@@ -4,11 +4,13 @@
 
 # 封面 <small>v1.0</small>
 
-> 一个神奇的文档网站生成器。
+> 本仓库以基于 docsify 构建。
 
-- 简单、轻便 (压缩后 ~21kB)
-- 无需生成 html 文件
-- 众多主题
+- xxxxx
+- xxxx
+- ffff
+
+[![stars](https://badgen.net/github/stars/aojdong/aojdong.github.io?icon=github&color=4ab8a1)](https://github.com/aojdong/aojdong.github.io) [![forks](https://badgen.net/github/forks/aojdong/aojdong.github.io?icon=github&color=4ab8a1)](https://github.com/aojdong/aojdong.github.io) 
 
 [GitHub](https://github.com/aojdong/aojdong.github.io)
-[Get Started](#docsify)
+[Get Started](README.md)
