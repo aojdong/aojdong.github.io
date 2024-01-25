@@ -6,9 +6,8 @@
 
 > 本仓库以基于 docsify 构建。
 
-- xxxxx
-- xxxx
-- ffff
+- Docsify引导
+- 生活日常
 
 [![stars](https://badgen.net/github/stars/aojdong/aojdong.github.io?icon=github&color=4ab8a1)](https://github.com/aojdong/aojdong.github.io) [![forks](https://badgen.net/github/forks/aojdong/aojdong.github.io?icon=github&color=4ab8a1)](https://github.com/aojdong/aojdong.github.io) 
 
