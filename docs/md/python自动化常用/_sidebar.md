@@ -1,0 +1,5 @@
+* [python自动化常用](/md/python自动化常用/README.md)
+    * [文件](/md/python自动化常用/文件.md)
+    * [文本](/md/python自动化常用/文本.md)
+    * [爬虫](/md/python自动化常用/爬虫.md)
+    * [邮件](/md/python自动化常用/邮件.md)
