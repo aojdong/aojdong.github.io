@@ -204,7 +204,17 @@ make undeploy
 - 实例化 `manager`，跟踪运行所有 `controller` ，以及设置 `Scheme` 和 API 服务器的客户端
 - 运行 `manager` ，它会运行所有的 `controller` 和 `webhook`
 
+
+#### `admission webhooks` 介绍
+OpenAPI v3 仅支持一些简单的校验规则，可以校验参数的类型，参数值的类型(支持正则)，是否为必要参数等，
+但若要使用与、或、非等操作对多个字段同时校验还是做不到的，所以针对一些特定场景的校验需要使用 `admission webhook`。
+
+用户可以以插件的方式对 `apiserver` 的请求做一些访问控制，要使用该功能需要自己写一个 `admission webhook`，
+`apiserver` 会在请求通过认证和授权之后、对象被持久化之前拦截该请求，然后调用 `webhook` 已达到准入控制。
+
+
 #### 实现 `admission webhooks`
+
 `admission webhooks` 包括 `Defaulter` 和 `Validator` 接口。
 Kubebuilder 会帮你处理剩下的事情，：
 - 创建 webhook 服务端。
@@ -228,3 +238,4 @@ kubebuilder create webhook --group ajd --version v1 --kind Home --defaulting --p
 想在本地运行 `webhooks`，必须为 `webhooks` 服务生成证书，并将它们放在正确的目录中（默认 /tmp/k8s-webhook-server/serving-certs/tls.{crt,key}）
 
 设置环境变量禁用 `webhooks`, `make run ENABLE_WEBHOOKS=false`
+
