@@ -13,8 +13,7 @@
 目标是在其中增设一个资源组 `ajd.my.domain`，
 `HTTP REST Path` 为`/apis/ajd.my.domain/`, 
 且资源 `home.ajd.my.domain` 可被 `kubectl CRUD`。
-即下图的 `Home` 部分:
-![home_crd_des.png](../../_media/home_crd_des.png)
+
 
 ## 实现
 最简单的方式是在集群中创建 CRD 对象
