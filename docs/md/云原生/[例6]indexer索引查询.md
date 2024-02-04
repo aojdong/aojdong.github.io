@@ -1,4 +1,4 @@
-## [例6]indexer索引查询
+## [例6]indexer索引
 一个用于存储Kubernetes API对象的缓存, 对需要的缓存实现 `IndexFunc` , 提高索引效率
 
 下面例子通过索引器函数查询数据
