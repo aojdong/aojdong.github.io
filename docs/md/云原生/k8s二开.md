@@ -169,7 +169,7 @@ make undeploy
 - `meta/v1` 包含所有 Kubernetes 种类共有的元数据
 - 所有序列化的字段必须是 驼峰式 ，所以我们使用的 json 标签需要遵循该格式, json 标签是必需的
 - 数字类型只支持 `int32` 和 `int64` 类型，对于小数，使用 `resource.Quantity` 类型
-- 时间类型使用`metav1.Time`，而不是 `metav1.Time`
+- 时间类型使用`metav1.Time`，而不是 `time.Time`
 
 `home_types.go` 文件主要就是定义 `Kind` 对象涉及到的结构体和 `init` 函数，主要有:
   - `HomeSpec`: `spec` 代表所期望的状态, 所以控制器的任何 “输入” 都会在这里
