@@ -1,5 +1,5 @@
 * [C++学习](/md/C++学习/README.md)
-    * [环境安装](/md/C++学习/1.windows OS cc++开发环境搭建和IDE CLion的使用.md)
+    * [环境安装](/md/C++学习/1.windows%20OS%20cc++开发环境搭建和IDE%20CLion的使用.md)
     * [C++基础语法](/md/C++学习/2.C++基础语法.md)
     * [C++面向对象特性](/md/C++学习/3.C++面向对象特性.md)
     * [CLion将c++代码当做独立脚本运行的办法](/md/C++学习/4.IDE%20CLion将c++代码当做独立脚本运行的办法.md)
