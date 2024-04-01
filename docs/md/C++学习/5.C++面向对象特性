@@ -368,3 +368,41 @@ int main() {
 
 在模板定义语法中关键字 `class` 与 `typename` 的作用完全一样。
 > typename 另外一个作用为：使用嵌套依赖类型
+
+## const使用方法
+### const使用原则
+- 只要能清楚为什么用，那么能用则用。设计类时，任何不会修改数据成员的函数都应该声明为 `const`。
+- 参数中使用 `const` 应该使用引用或指针，而不是一般的对象实例(对象拷贝影响性能)。
+- `const` 在成员函数中有三种用法(参数、返回值、函数)，不要轻易将函数返回值定为 `const`。
+
+### 常量和指针
+`const` 位置不同，修饰的目标也不同。
+```C++  // 指针分为p和*p两部分， 从左往右 判断const靠近*还是p, 固定最近的
+  const int* const_pointer = new int;  // 固定 *p， 内容（*p）不可变， 指针p可变
+  *const_pointer = 2;  // *p 不可变, 编译失败
+  const_pointer = (int*) &A; // p 可变
+
+  int* const pointer_const = new int; // 固定 p, 指针p不可变， 内容可变
+  *pointer_const = 2; // *p 可变
+  pointer_const = (int*) &A; // p 不可变, 编译失败
+
+  const int* const const_pointer_const = new int; // 固定 *p 和 p,  内容*p和指针p都不可变
+  *const_pointer_const = 2;  // *p 不可变, 编译失败
+  const_pointer_const = (int*) &A; // p 不可变, 编译失败
+
+```
+
+### const在成员函数中
+```C++
+class Base {
+private:
+    int* x;
+public:
+    // 前两个const, 表示返回的是一个指针，且内容*p和指针p都不可变
+    const int* const GetX(const int num) const { // 最后的const, 表明不会对成员变量造成影响
+        num = 2; // 编译失败，参数里的const修饰了参数只读
+        return x;
+    }
+}
+```
+> 如果非要在 `const` 成员函数中修改成员变量，可以使用 `mutable` 修饰变量。
