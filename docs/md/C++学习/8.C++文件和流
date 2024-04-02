@@ -1,0 +1,96 @@
+# C++ 文件和流
+`cin` 和 `cout` 分别是标准输入读取流和标准输出写入流, 属于 `iostream` 库;
+而文件的文件读取流和文件写入流都在 `fstream` 库中。
+
+## fstream 库
+提供了三个类：
+- `ifstream`: 输入文件流, 读取文件
+- `ofstream`: 输出文件流, 写入文件
+- `fstream`: 文件流, 读写文件
+
+## 打开文件
+使用 `open()` 函数进行操作，该函数是 `fstream`、`ifstream` 和 `ofstream` 对象的一个成员。
+```C++
+void open(const char *filename, ios::openmode mode);
+```
+`openmode` 打开模式, 包括以下方式:
+- ios::app: 追加模式， 所有写入都追加到文件末尾
+- ios::ate: 文件打开后定位到文件末尾
+- ios::in: 打开文件用于读取, 文件不存在则创建失败
+- ios:binary: 以二进制模式打开文件  
+- ios::out: 打开文件用于写入, 文件不存在则创建新文件;文件已存在，则会清空文件内容然后写入。
+- ios::trunc: 如果文件已存在，打开之前将其截断为零长度; 不存在则创建一个新的空文件
+
+> ios::out 和 ios::trunc 都是覆写原文件，他们的唯一区别就是丢弃内容的时间，
+
+> 这些文件打开模式可以组合使用, 使用`|`连接, 如: `ios::in | ios::binary` 以二进制读取模式打开文件
+
+
+## 关闭文件
+使用 `close()` 函数进行操作，该函数是 `fstream`、`ifstream` 和 `ofstream` 对象的一个成员。
+```C++
+void close();
+```
+> `fstream`、`ifstream` 和 `ofstream`类的析构函数中会执行关闭文件的操作。
+
+## 写入/读取文件
+- 使用流插入运算符 `<<` 向文件写入信息
+- 使用流提取运算符 `>>` 从文件读取信息
+
+自定义封装文件操作类：文件名尽量使用绝对路径。
+```C++
+#include <iostream>
+#include <fstream>
+#include <string>
+#include <filesystem>
+
+class FileOperation {
+public:
+    // 读取文件内容
+    static std::string ReadFile(const std::string& filePath);
+
+    // 写入文件内容
+    static void WriteFile(const std::string& filePath, const std::string& content, bool isAppend = false);
+};
+
+std::string FileOperation::ReadFile(const std::string& filePath) {
+    std::ifstream file(filePath);
+    if (!file.is_open()) {
+        throw std::runtime_error("无法打开文件");
+    }
+    std::string content((std::istreambuf_iterator<char>(file)), (std::istreambuf_iterator<char>()));
+    file.close();
+    return content;
+}
+
+void FileOperation::WriteFile(const std::string &filePath, const std::string &content, bool isAppend)  {
+    std::ofstream file(filePath, isAppend? std::fstream::app : std::fstream::out);
+    if (!file.is_open()) {
+        throw std::runtime_error("无法打开文件");
+    }
+    file << content;
+    file.close();
+}
+
+```
+
+## 文件位置指针
+| 功能 | seekg | seekp |
+| --- | --- | --- |
+| 作用 | 定位输入流的读取位置 | 定位输出流的写入位置 |
+| 参数 | 位置偏移量和定位基准 | 位置偏移量和定位基准 |
+| 所属对象 | istream  | ostream |
+
+```C++
+// 定位到 fileObject 的第 n 个字节（假设是 ios::beg）
+fileObject.seekg( n );
+ 
+// 把文件的读指针从 fileObject 当前位置向后移 n 个字节
+fileObject.seekg( n, ios::cur );
+ 
+// 把文件的读指针从 fileObject 末尾往回移 n 个字节
+fileObject.seekg( n, ios::end );
+ 
+// 定位到 fileObject 的末尾
+fileObject.seekg( 0, ios::end );
+```
