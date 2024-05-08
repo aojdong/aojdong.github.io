@@ -136,3 +136,27 @@ curl  http://node-ip:ingress-nginx-nodeport -H 'host: 域名'
 
 使用域名访问时，需要配置`hosts`域名解析成node-ip
 访问：http://域名:ingress-nginx-nodeport
+
+## ingress 添加basic auth认证
+### Htpasswd
+htpasswd是Apache的Web服务器内置的工具,用于创建和更新储存用户名和用户基本认证的密码文件
+### 生成用户密码文件
+```bash
+htpasswd -c auth admin
+```
+### 创建 `secret` 资源存储用户密码
+```bash
+kubectl create secret generic my-auth-secret --from-file=auth
+```
+### 修改 `ingress`资源
+```yaml
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-http
+  annotations:
+    nginx.ingress.kubernetes.io/auth-type: basic
+    nginx.ingress.kubernetes.io/auth-secret: my-auth-secret
+    nginx.ingress.kubernetes.io/auth-realm: "Authentication Required"
+...
+```
