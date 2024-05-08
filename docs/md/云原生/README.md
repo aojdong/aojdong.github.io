@@ -4,6 +4,8 @@
 
 * [CRD原理学习](/md/云原生/CRD原理学习.md)
 * [k8s二开](/md/云原生/k8s二开.md)
+* [kubevir实战](/md/云原生/kubevir实战.md)
+* [dashboard、metrics-server和ingress实战](/md/云原生/dashboard_metrics-server和ingress部署实战.md)
 
 * client-go例子
     * [准备kubeconfig路径](/md/云原生/[例1]准备kubeconfig路径)
@@ -20,3 +22,5 @@
 3. https://www.zengzhiqi.top/
 4. https://www.zeng.dev/post/
 5. https://www.fdevops.com/2022/06/26/31114
+6. https://www.cnblogs.com/anyux/p/17745573.html
+7. https://www.cnblogs.com/wangzy-Zj/p/14078749.html
