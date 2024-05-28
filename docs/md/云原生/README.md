@@ -8,7 +8,9 @@
 * [dashboard、metrics-server和ingress实战](/md/云原生/dashboard_metrics-server和ingresss实战.md)
 
 * 问题记录
-   * [Job删除](/md/云原生/[问题处理]client-go调用BatchV1().Jobs()删除时不同时删除关联pod资源.md)
+   * [Job删除](/md/云原生/[问题处理]client-go调用BatchV1\(\).Jobs\(\)删除时不同时删除关联pod资源.md)
+   * [记录源IP](/md/云原生/[问题处理]k8s服务使用源IP.md)
+   * [压缩Docker镜像](/md/云原生/[问题处理]压缩Docker镜像的办法.md)
 
 * client-go例子
     * [准备kubeconfig路径](/md/云原生/[例1]准备kubeconfig路径)
