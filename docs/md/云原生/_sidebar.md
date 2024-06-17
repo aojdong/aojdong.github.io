@@ -13,6 +13,6 @@
     * [indexer索引查询](/md/云原生/[例6]indexer索引查询.md)
     * [watch监视事件](/md/云原生/[例7]watch监视事件.md)
   * 问题处理
-    * [k8s服务使用源IP](/md/云原生/[问题处理]k8s服务使用源%20IP.md)
+    * [k8s服务使用源IP](/md/云原生/[问题处理]k8s服务使用源IP.md)
     * [删除Job关联pod资源](/md/云原生/[问题处理]client-go调用BatchV1().Jobs()删除时不同时删除关联pod资源.md)
     * [压缩Docker镜像](/md/云原生/[问题处理]压缩Docker镜像的办法.md)
