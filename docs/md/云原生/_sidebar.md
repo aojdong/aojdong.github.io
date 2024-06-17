@@ -1,6 +1,9 @@
 * [云原生](/md/云原生/README.md)
   * [CRD原理学习](/md/云原生/CRD原理学习.md)
   * [k8s二开](/md/云原生/k8s二开.md)
+  * [ascend-operator学习](/md/云原生/ascend-operator学习.md)
+  * [kubevir实战](/md/云原生/kubevir实战.md)
+  * [dashboard_metrics-server和ingresss实战](/md/云原生/dashboard_metrics-server和ingresss实战.md)
   * client-go例子
     * [准备kubeconfig路径](/md/云原生/[例1]准备kubeconfig路径)
     * [client-set使用](/md/云原生/[例2]client-set使用.md)
@@ -9,3 +12,7 @@
     * [restClient使用](/md/云原生/[例5]restClient使用.md)
     * [indexer索引查询](/md/云原生/[例6]indexer索引查询.md)
     * [watch监视事件](/md/云原生/[例7]watch监视事件.md)
+  * 问题处理
+    * [k8s服务使用源IP](/md/云原生/[问题处理]k8s服务使用源%20IP.md)
+    * [删除Job关联pod资源](/md/云原生/[问题处理]client-go调用BatchV1().Jobs()删除时不同时删除关联pod资源.md)
+    * [压缩Docker镜像](/md/云原生/[问题处理]压缩Docker镜像的办法.md)
