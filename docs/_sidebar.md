@@ -6,6 +6,7 @@
 * [安装运维](/md/安装运维/README.md)
 * [C++学习](/md/C++学习/README.md)
 * [Qt学习](/md/QT学习/README.md)
+* [面试](/md/面试问题/README.md)
 * [生活日常](/md/生活日常/README.md)
 
 
