@@ -2,6 +2,7 @@
 
 记录一些云原生相关学习笔记。
 
+* [K8S安装](/md/云原生/安装k8s.md])
 * [CRD原理学习](/md/云原生/CRD原理学习.md)
 * [k8s二开](/md/云原生/k8s二开.md)
 * [kubevir实战](/md/云原生/kubevir实战.md)
@@ -29,3 +30,5 @@
 5. https://www.fdevops.com/2022/06/26/31114
 6. https://www.cnblogs.com/anyux/p/17745573.html
 7. https://www.cnblogs.com/wangzy-Zj/p/14078749.html
+8. https://blog.csdn.net/weixin_42715225/article/details/141980886
+9. https://blog.csdn.net/Hansyang84/article/details/113991769
