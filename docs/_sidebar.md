@@ -1,5 +1,6 @@
 <!-- docs/_sidebar.md -->
 
+* [我的项目](/md/我的项目/README.md)
 * [Docsify引导](/md/Docsify引导/README.md)
 * [python自动化常用](/md/python自动化常用/README.md)
 * [云原生](/md/云原生/README.md)
