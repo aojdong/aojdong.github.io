@@ -6,13 +6,15 @@
     * `deb`：表示**二进制软件包**的下载地址。
     * `deb-src`：表示**源代码软件包**下载地址。
 
+> 注意：Ubuntu 24.04 改用了新的源格式，不再用老的 `sources.list`，而是用 `/etc/apt/sources.list.d/ubuntu.sources`
+
 - yum 源配置目录 `/etc/yum.repos.d/`
 
 
 ### 常用的 apt 源：
 1. 官方源：http://archive.ubuntu.com/ubuntu/
 2. 清华源：https://mirrors.tuna.tsinghua.edu.cn/ubuntu/
-3. 阿里云源：http://mirrors.aliyun.com/ubuntu/
+3. 阿里云源：https://mirrors.aliyun.com/ubuntu/
 4. 中科大源：https://mirrors.ustc.edu.cn/ubuntu/
 5. 华为源：https://mirrors.huaweicloud.com/ubuntu/
 6. 搜狐源：http://mirrors.sohu.com/ubuntu/
